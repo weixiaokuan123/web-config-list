@@ -54,8 +54,9 @@ DOMAIN-SUFFIX,aadcdn.msftauth.net
 
 [gtranslate]
 # Google 翻译网页版
-# 注意 google.com 必须放行：翻译被限流时会跳转到 www.google.com/sorry 做人机校验，
-# 不放行这个域名，翻译就会一直卡在"正在翻译"。搜索页由上面的 [block] 单独拦掉。
+# 注意 www.google.com 必须放行：翻译被限流时会跳转到 www.google.com/sorry 做人机校验，
+# 不放行这个域名，翻译就会一直卡住。
+# 放行 accounts.google.com 后，登录 Google 账号时 Google 搜索也会跟着能用（登录态下 www.google.com 的主页和搜索都通）。
 DOMAIN-SUFFIX,translate.google.com
 DOMAIN-SUFFIX,translate.google.com.hk
 DOMAIN-SUFFIX,translate.googleapis.com
@@ -71,6 +72,13 @@ DOMAIN-SUFFIX,clients6.google.com
 DOMAIN-SUFFIX,fonts.gstatic.com
 # 人机校验
 DOMAIN-SUFFIX,recaptcha.net
+# Google 账号登录（要登录 Google 账号必须有；注意登录后搜索也会能用）
+DOMAIN-SUFFIX,accounts.google.com
+DOMAIN-SUFFIX,accounts.google.com.hk
+DOMAIN-SUFFIX,myaccount.google.com
+DOMAIN-SUFFIX,oauth2.googleapis.com
+DOMAIN-SUFFIX,oauthaccountmanager.googleapis.com
+DOMAIN-SUFFIX,apis.google.com
 
 [gmaps]
 # Google 地图：瓦片服务器单独列，缺了地图只会显示灰格子
