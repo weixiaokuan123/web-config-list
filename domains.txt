@@ -1,0 +1,123 @@
+// EzProxy 域名分类表：界面上的四个开关各对应一组域名
+// 每一行是 "<规则类型>,<域名>"
+// 维护方式：直接改这个文件，然后重启 EzProxy 即可，不需要重新编译
+// 规则类型：DOMAIN-SUFFIX（整个域名及其子域名）、DOMAIN（精确匹配）、DOMAIN-KEYWORD（含关键词）
+//
+// 注意：这个文件只放"要代理"的域名。除此之外的一切都走直连。
+// 加 google.com 这种大域名会让 Google 搜索一起能用，但翻译功能被人机校验时
+// 必须能打开 www.google.com/sorry，不放行的话翻译会一直卡住，只能放行。
+
+[chatgpt]
+# 主站与登录
+DOMAIN-SUFFIX,chatgpt.com
+DOMAIN-SUFFIX,chat.openai.com
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,auth.openai.com
+DOMAIN-SUFFIX,auth0.openai.com
+DOMAIN-SUFFIX,sora.com
+# 静态资源（缺了会白屏或转圈）
+DOMAIN-SUFFIX,oaistatic.com
+DOMAIN-SUFFIX,oaiusercontent.com
+DOMAIN-SUFFIX,cdn.openai.com
+DOMAIN-SUFFIX,openai.azureedge.net
+DOMAIN-SUFFIX,openaiapi-site.azureedge.net
+# 验证码与人机校验
+DOMAIN-SUFFIX,twimg.com
+DOMAIN-SUFFIX,arkoselabs.com
+DOMAIN-SUFFIX,challenges.cloudflare.com
+# 语音/实时会话
+DOMAIN-SUFFIX,livekit.cloud
+DOMAIN-SUFFIX,statsig.com
+
+[onedrive]
+# 云盘主站
+DOMAIN-SUFFIX,onedrive.live.com
+DOMAIN-SUFFIX,onedrive.com
+DOMAIN-SUFFIX,1drv.ms
+DOMAIN-SUFFIX,1drv.com
+DOMAIN-SUFFIX,sharepoint.com
+DOMAIN-SUFFIX,officeapps.live.com
+DOMAIN-SUFFIX,skyapi.onedrive.live.com
+DOMAIN-SUFFIX,storage.live.com
+# 登录与授权（缺了会一直转圈登录不上）
+DOMAIN-SUFFIX,login.live.com
+DOMAIN-SUFFIX,login.microsoftonline.com
+DOMAIN-SUFFIX,microsoftonline.com
+DOMAIN-SUFFIX,microsoftonline-p.com
+DOMAIN-SUFFIX,login.microsoft.com
+DOMAIN-SUFFIX,account.live.com
+DOMAIN-SUFFIX,graph.microsoft.com
+DOMAIN-SUFFIX,msauth.net
+DOMAIN-SUFFIX,msftauth.net
+DOMAIN-SUFFIX,aadcdn.msauth.net
+DOMAIN-SUFFIX,aadcdn.msftauth.net
+
+[gtranslate]
+# Google 翻译网页版
+# 注意 google.com 必须放行：翻译被限流时会跳转到 www.google.com/sorry 做人机校验，
+# 不放行这个域名，翻译就会一直卡在"正在翻译"。搜索页由上面的 [block] 单独拦掉。
+DOMAIN-SUFFIX,translate.google.com
+DOMAIN-SUFFIX,translate.google.com.hk
+DOMAIN-SUFFIX,translate.googleapis.com
+DOMAIN-SUFFIX,translate.googleusercontent.com
+DOMAIN-SUFFIX,translate.googleapis.cn
+DOMAIN-SUFFIX,translate-pa.googleapis.com
+DOMAIN-SUFFIX,www.google.com
+DOMAIN-SUFFIX,www.google.com.hk
+# 翻译页面的静态资源
+DOMAIN-SUFFIX,googleusercontent.com
+# 页面框架要求的最小 API
+DOMAIN-SUFFIX,clients6.google.com
+DOMAIN-SUFFIX,fonts.gstatic.com
+# 人机校验
+DOMAIN-SUFFIX,recaptcha.net
+
+[gmaps]
+# Google 地图：瓦片服务器单独列，缺了地图只会显示灰格子
+DOMAIN-SUFFIX,maps.google.com
+DOMAIN-SUFFIX,maps.google.com.hk
+DOMAIN-SUFFIX,maps.gstatic.com
+DOMAIN-SUFFIX,maps.googleapis.com
+DOMAIN-SUFFIX,mt0.google.com
+DOMAIN-SUFFIX,mt1.google.com
+DOMAIN-SUFFIX,mt2.google.com
+DOMAIN-SUFFIX,mt3.google.com
+DOMAIN-SUFFIX,khms0.googleapis.com
+DOMAIN-SUFFIX,khms1.googleapis.com
+DOMAIN-SUFFIX,khms2.googleapis.com
+DOMAIN-SUFFIX,khms3.googleapis.com
+DOMAIN-SUFFIX,khmdb.googleapis.com
+DOMAIN-SUFFIX,streetviewpixels-pa.googleapis.com
+DOMAIN-SUFFIX,geo0.ggpht.com
+DOMAIN-SUFFIX,geo1.ggpht.com
+DOMAIN-SUFFIX,geo2.ggpht.com
+DOMAIN-SUFFIX,geo3.ggpht.com
+DOMAIN-SUFFIX,maps.google.cn
+DOMAIN-SUFFIX,ditu.google.cn
+# 地图页面的静态资源
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,gstatic.cn
+DOMAIN-SUFFIX,ggpht.com
+DOMAIN-SUFFIX,gvt1.com
+DOMAIN-SUFFIX,gvt2.com
+DOMAIN-SUFFIX,gvt3.com
+
+[zlibrary]
+# Z-Library 电子书库：主站 + 镜像 + 登录域
+# 域名经常被没收换新，这里尽量多列，都走加速
+DOMAIN-SUFFIX,z-library.ec
+DOMAIN-SUFFIX,z-library.sk
+DOMAIN-SUFFIX,1lib.sk
+DOMAIN-SUFFIX,z-lib.sk
+DOMAIN-SUFFIX,z-lib.nl
+DOMAIN-SUFFIX,z-lib.co
+DOMAIN-SUFFIX,z-lib.io
+DOMAIN-SUFFIX,z-lib.id
+DOMAIN-SUFFIX,z-library.bz
+DOMAIN-SUFFIX,singlelogin.me
+DOMAIN-SUFFIX,singlelogin.re
+DOMAIN-SUFFIX,b-ok.cc
+DOMAIN-SUFFIX,b-ok.org
+DOMAIN-SUFFIX,booksc.org
+DOMAIN-SUFFIX,1lib.de
+DOMAIN-SUFFIX,1lib.net
