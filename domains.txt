@@ -7,7 +7,7 @@
 // 加 google.com 这种大域名会让 Google 搜索一起能用，但翻译功能被人机校验时
 // 必须能打开 www.google.com/sorry，不放行的话翻译会一直卡住，只能放行。
 
-[chatgpt]
+[chatgpt:ChatGPT]
 # 主站与登录
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,chat.openai.com
@@ -29,7 +29,7 @@ DOMAIN-SUFFIX,challenges.cloudflare.com
 DOMAIN-SUFFIX,livekit.cloud
 DOMAIN-SUFFIX,statsig.com
 
-[onedrive]
+[onedrive:OneDrive]
 # 云盘主站
 DOMAIN-SUFFIX,onedrive.live.com
 DOMAIN-SUFFIX,onedrive.com
@@ -52,7 +52,7 @@ DOMAIN-SUFFIX,msftauth.net
 DOMAIN-SUFFIX,aadcdn.msauth.net
 DOMAIN-SUFFIX,aadcdn.msftauth.net
 
-[gtranslate]
+[gtranslate:Google 翻译]
 # Google 翻译网页版
 # 注意 www.google.com 必须放行：翻译被限流时会跳转到 www.google.com/sorry 做人机校验，
 # 不放行这个域名，翻译就会一直卡住。
@@ -80,7 +80,7 @@ DOMAIN-SUFFIX,oauth2.googleapis.com
 DOMAIN-SUFFIX,oauthaccountmanager.googleapis.com
 DOMAIN-SUFFIX,apis.google.com
 
-[gmaps]
+[gmaps:Google 地图]
 # Google 地图：瓦片服务器单独列，缺了地图只会显示灰格子
 DOMAIN-SUFFIX,maps.google.com
 DOMAIN-SUFFIX,maps.google.com.hk
@@ -110,7 +110,7 @@ DOMAIN-SUFFIX,gvt1.com
 DOMAIN-SUFFIX,gvt2.com
 DOMAIN-SUFFIX,gvt3.com
 
-[zlibrary]
+[zlibrary:Z-Library]
 # Z-Library 电子书库：主站 + 镜像 + 登录域
 # 域名经常被没收换新，这里尽量多列，都走加速
 DOMAIN-SUFFIX,z-library.ec
